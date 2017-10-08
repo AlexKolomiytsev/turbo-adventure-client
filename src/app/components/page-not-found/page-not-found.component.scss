@@ -1,0 +1,15 @@
+@import "~assets/styles/shared/index.scss";
+
+.not-found-page {
+  padding: 100px;
+  text-align: center;
+
+  font-family: 'Pacifico', sans-serif;
+  font-size: 72px;
+
+  @media screen and (max-width: $mobile-breakpoint) {
+    font-size: 24px;
+    padding: 100px 15px;
+  }
+
+}
