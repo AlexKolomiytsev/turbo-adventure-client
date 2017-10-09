@@ -1,38 +1,36 @@
-/*
+/**
  * Angular imports
  */
 import { BrowserModule }            from '@angular/platform-browser';
 import { NgModule }                 from '@angular/core';
-import { RouterModule }             from '@angular/router';
-
-/*
- * Components
- */
-import { RootComponent }            from './components/root/root.component';
-import { BaseComponent }            from './components/base/base.component';
-import { HeaderComponent }          from './components/base/header/header.component';
-import { PageNotFoundComponent }    from './components/page-not-found/page-not-found.component';
 
 /**
- * Routes
+ * Root component
  */
-import { routes }                   from "./app.routes";
+import { RootComponent }            from './app.root.component';
+
+/**
+ * Application area modules
+ */
+import { BaseModule }               from "./base/base.module";
+import { PageNotFoundComponent }    from "./page-not-found/page-not-found.component";
+
+/**
+ * Main routing module
+ */
+import { AppRouting }               from "./app.routing";
 
 /**
  * Main app module
  */
 @NgModule({
-  declarations: [
-    RootComponent,
-    BaseComponent,
-    HeaderComponent,
-    PageNotFoundComponent
-  ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    AppRouting,
+    BaseModule
   ],
   providers: [],
+  declarations: [RootComponent, PageNotFoundComponent ],
   bootstrap: [RootComponent]
 })
 export class AppModule { }
